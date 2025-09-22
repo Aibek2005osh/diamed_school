@@ -3,3 +3,12 @@ spring:
     url: jdbc:postgresql://localhost:5432/diamed_school
     username: postgres
     password: Aibek005
+  security:
+    jwt:
+      secret_key: java16Aibek005
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8080
