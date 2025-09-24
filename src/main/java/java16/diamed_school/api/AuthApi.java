@@ -1,5 +1,6 @@
 package java16.diamed_school.api;
 
+import jakarta.validation.Valid;
 import java16.diamed_school.dto.request.SignUpRequest;
 import java16.diamed_school.dto.request.SignInRequest;
 import java16.diamed_school.service.AuthService;
@@ -18,7 +19,7 @@ public class AuthApi {
 
 
     @PostMapping("sign-up")
-    ResponseEntity<?> signUp(@RequestBody SignUpRequest signUpRequest) {
+    ResponseEntity<?> signUp(@RequestBody @Valid SignUpRequest signUpRequest) {
         return authService.signUp(signUpRequest);
 
     }
