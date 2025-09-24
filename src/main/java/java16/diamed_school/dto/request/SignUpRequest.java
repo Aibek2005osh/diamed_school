@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import java16.diamed_school.validation.UniqueEmail;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +24,7 @@ public class SignUpRequest {
             message = "Номер телефона должен быть в правильном формате! Примеры: +79123456789, +996123456789, +998123456789"
     )
     private String phoneNumber;
-    @Email
+    @Email @UniqueEmail
     @NotBlank(message = "Электронная почта не должна быть пустой!")
     private String email;
     @NotBlank(message = "Пароль не должен быть пустым!")
